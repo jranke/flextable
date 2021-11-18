@@ -8,21 +8,36 @@
 
 <title>flextable creation — flextable • flextable</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,15 +45,19 @@
 
 
 
-<meta property="og:title" content="flextable creation — flextable" />
 
+<meta property="og:title" content="flextable creation — flextable" />
 <meta property="og:description" content="Create a flextable object with function flextable.
 flextable are designed to make tabular reporting easier for
 R users. Functions are available to let you format text, paragraphs and cells;
 table cells can be merge vertically or horizontally, row headers can easilly
 be defined, rows heights and columns widths can be manually set or automatically
-computed." />
-<meta name="twitter:card" content="summary" />
+computed.
+Default formatting properties are automatically applied to every
+flextable you produce. You can change these default values with
+function set_flextable_defaults()." />
+<meta property="og:image" content="/logo.png" />
+
 
 
 
@@ -52,9 +71,10 @@ computed." />
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -68,42 +88,23 @@ computed." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flextable</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.10</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../articles/overview.html">Overview</a>
-</li>
-<li>
-  <a href="../articles/selectors.html">Selectors</a>
-</li>
-<li>
-  <a href="../articles/layout.html">Layout</a>
-</li>
-<li>
-  <a href="../articles/format.html">Format visual properties</a>
-</li>
-<li>
-  <a href="../articles/display.html">Format Content</a>
-</li>
-<li>
-  <a href="../articles/offcran/images.html">Render as image</a>
-</li>
-<li>
-  <a href="../articles/offcran/examples.html">Examples</a>
-</li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li>
   <a href="../reference/index.html">Function reference</a>
 </li>
 <li>
-  <a href="https://github.com/davidgohel/flextable">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://ardata-fr.github.io/flextable-book/">User Documentation</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/davidgohel/flextable/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -114,35 +115,42 @@ computed." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>flextable creation</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/davidgohel/flextable/blob/master/R/flextable.R'><code>R/flextable.R</code></a></small>
     <div class="hidden name"><code>flextable.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>Create a flextable object with function <code>flextable</code>.</p>
 <p><code>flextable</code> are designed to make tabular reporting easier for
 R users. Functions are available to let you format text, paragraphs and cells;
 table cells can be merge vertically or horizontally, row headers can easilly
 be defined, rows heights and columns widths can be manually set or automatically
 computed.</p>
-    
+<p>Default formatting properties are automatically applied to every
+flextable you produce. You can change these default values with
+function <code><a href='set_flextable_defaults.html'>set_flextable_defaults()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>flextable</span>(<span class='no'>data</span>, <span class='kw'>col_keys</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>data</span>), <span class='kw'>cwidth</span> <span class='kw'>=</span> <span class='fl'>0.75</span>,
-  <span class='kw'>cheight</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>defaults</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></span>(), <span class='kw'>theme_fun</span> <span class='kw'>=</span> <span class='no'>theme_booktabs</span>)
+    <pre class="usage"><span class='fu'>flextable</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  col_keys <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>,
+  cwidth <span class='op'>=</span> <span class='fl'>0.75</span>,
+  cheight <span class='op'>=</span> <span class='fl'>0.25</span>,
+  defaults <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='op'>)</span>,
+  theme_fun <span class='op'>=</span> <span class='va'>theme_booktabs</span>
+<span class='op'>)</span>
 
-<span class='fu'>qflextable</span>(<span class='no'>data</span>)
+<span class='fu'>qflextable</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>
 
-<span class='fu'>regulartable</span>(<span class='no'>data</span>, <span class='kw'>col_keys</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></span>(<span class='no'>data</span>), <span class='kw'>cwidth</span> <span class='kw'>=</span> <span class='fl'>0.75</span>,
-  <span class='kw'>cheight</span> <span class='kw'>=</span> <span class='fl'>0.25</span>)</pre>
-    
+<span class='fu'>regulartable</span><span class='op'>(</span><span class='va'>data</span>, col_keys <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span>, cwidth <span class='op'>=</span> <span class='fl'>0.75</span>, cheight <span class='op'>=</span> <span class='fl'>0.25</span><span class='op'>)</span></pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -160,74 +168,74 @@ the dataset, they will be added as blank columns by default.</p></td>
       <td><p>initial width and height to use for cell sizes in inches.</p></td>
     </tr>
     <tr>
-      <th>defaults</th>
-      <td><p>a list of default values for formats, supported options are
-<code>fontname</code>, <code>font.size</code>, <code>color</code> and <code>padding</code>.</p></td>
-    </tr>
-    <tr>
-      <th>theme_fun</th>
-      <td><p>a function theme to apply before returning the flextable.
-set to NULL for none.</p></td>
+      <th>defaults, theme_fun</th>
+      <td><p>deprecated, use <code><a href='set_flextable_defaults.html'>set_flextable_defaults()</a></code> instead.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>A <code>flextable</code> is made of 3 parts: header, body and footer.</p>
 <p>Most functions have an argument named <code>part</code> that will be used
 to specify what part of of the table should be modified.</p>
-    
+<p>If working with R Markdown document, you should read about knitr
+chunk options in <code><a href='knit_print.flextable.html'>knit_print.flextable()</a></code> and about setting
+default values with <code><a href='set_flextable_defaults.html'>set_flextable_defaults()</a></code>.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Function <code>regulartable</code> is maintained for compatibility with old codes
-mades by users but be aware it produces the same exact object than <code>flextable</code>.</p>
+mades by users but be aware it produces the same exact object than <code>flextable</code>.
+This function should be deprecated then removed in the next versions.</p>
+    <h2 class="hasAnchor" id="illustrations"><a class="anchor" href="#illustrations"></a>Illustrations</h2>
+
     
+
+
+<p><img src='figures/fig_flextable_1.png' width=100% /></p>
     <h2 class="hasAnchor" id="qflextable"><a class="anchor" href="#qflextable"></a>qflextable</h2>
 
     
-    <p><code>qflextable</code> is a convenient tool to produce quickly
-a flextable for reporting</p>
-    
+
+<p><code>qflextable</code> is a convenient tool to produce quickly
+a flextable for reporting where layoout is fixed and columns
+widths adjusted with <code><a href='autofit.html'>autofit()</a></code>.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='style.html'>style()</a></code>, <code><a href='autofit.html'>autofit()</a></code>, <code><a href='theme_booktabs.html'>theme_booktabs()</a></code>, <code><a href='knit_print.flextable.html'>knit_print.flextable()</a></code>,
+<code><a href='compose.html'>compose()</a></code>, <code><a href='footnote.html'>footnote()</a></code>, <code><a href='set_caption.html'>set_caption()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>ft</span> <span class='kw'>&lt;-</span> <span class='fu'>flextable</span>(<span class='no'>mtcars</span>)
-<span class='no'>ft</span></div><div class='output co'>#&gt; a flextable object.
-#&gt; col_keys: `mpg`, `cyl`, `disp`, `hp`, `drat`, `wt`, `qsec`, `vs`, `am`, `gear`, `carb` 
-#&gt; header has 1 row(s) 
-#&gt; body has 32 row(s) 
-#&gt; original dataset sample: 
-#&gt;                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-#&gt; Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-#&gt; Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-#&gt; Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-#&gt; Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-#&gt; Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</div></pre>
+    <pre class="examples"><span class='r-in'><span class='va'>ft</span> <span class='op'>&lt;-</span> <span class='fu'>flextable</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>mtcars</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-in'><span class='va'>ft</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> a flextable object.</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> col_keys: `mpg`, `cyl`, `disp`, `hp`, `drat`, `wt`, `qsec`, `vs`, `am`, `gear`, `carb` </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> header has 1 row(s) </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> body has 6 row(s) </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> original dataset sample: </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>                    mpg cyl disp  hp drat    wt  qsec vs am gear carb</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</span>
+</pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#note">Note</a></li>
-
-      <li><a href="#qflextable">qflextable</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <link href="../ardata.css" rel="stylesheet">
 <div class="author">
-  <p>Version&nbsp;0.5.5 - Developed by David Gohel - proudly brought to you by <a href="http://www.ardata.fr"><img alt="ardata" src='../ardata-logo.svg' style="vertical-align:middle;height:24px;"/></a>
+  <p>Version&nbsp;0.6.10 - Developed by David Gohel - proudly brought to you by <a href="http://www.ardata.fr"><img alt="ardata" src='../ardata-logo.svg' style="vertical-align:middle;height:24px;"/></a>
   </p>
 </div>
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
 <script>
@@ -239,11 +247,14 @@ a flextable for reporting</p>
   ga('create', 'UA-48354045-1', 'auto');
   ga('send', 'pageview');
 </script>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

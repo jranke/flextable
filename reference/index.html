@@ -8,21 +8,36 @@
 
 <title>Function reference • flextable</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,7 +45,10 @@
 
 
 
+
 <meta property="og:title" content="Function reference" />
+<meta property="og:image" content="/logo.png" />
+
 
 
 
@@ -44,9 +62,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -60,42 +79,23 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">flextable</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.5</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.10</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../articles/overview.html">Overview</a>
-</li>
-<li>
-  <a href="../articles/selectors.html">Selectors</a>
-</li>
-<li>
-  <a href="../articles/layout.html">Layout</a>
-</li>
-<li>
-  <a href="../articles/format.html">Format visual properties</a>
-</li>
-<li>
-  <a href="../articles/display.html">Format Content</a>
-</li>
-<li>
-  <a href="../articles/offcran/images.html">Render as image</a>
-</li>
-<li>
-  <a href="../articles/offcran/examples.html">Examples</a>
-</li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li>
   <a href="../reference/index.html">Function reference</a>
 </li>
 <li>
-  <a href="https://github.com/davidgohel/flextable">
-    <span class="fa fa-github fa-lg"></span>
+  <a href="https://ardata-fr.github.io/flextable-book/">User Documentation</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/davidgohel/flextable/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -106,6 +106,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -129,6 +130,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -143,6 +149,11 @@
           <p class="section-desc"><p>Add or modify flextable`s headers or footers</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -161,6 +172,12 @@
           <p><code><a href="add_header.html">add_header()</a></code> <code><a href="add_header.html">add_footer()</a></code> </p>
         </td>
         <td><p>Add a rows of labels in header or footer part</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="add_body.html">add_body()</a></code> </p>
+        </td>
+        <td><p>Add rows in body part</p></td>
       </tr><tr>
         
         <td>
@@ -187,6 +204,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -226,15 +248,33 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="set_table_properties.html">set_table_properties()</a></code> </p>
+        </td>
+        <td><p>Global table properties</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="width.html">width()</a></code> </p>
         </td>
         <td><p>Set flextable columns width</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="hrule.html">hrule()</a></code> </p>
+        </td>
+        <td><p>Set flextable rule for rows heights</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="autofit.html">autofit()</a></code> </p>
         </td>
         <td><p>Adjusts cell widths and heights</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fit_to_width.html">fit_to_width()</a></code> </p>
+        </td>
+        <td><p>fit a flextable to a maximum width</p></td>
       </tr><tr>
         
         <td>
@@ -262,7 +302,7 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="xtable_to_flextable.html">xtable_to_flextable()</a></code> </p>
+          <p><code><a href="as_flextable.xtable.html">as_flextable(<i>&lt;xtable&gt;</i>)</a></code> <code><a href="as_flextable.xtable.html">xtable_to_flextable()</a></code> </p>
         </td>
         <td><p>get a flextable from a xtable object</p></td>
       </tr><tr>
@@ -279,7 +319,24 @@
           <p class="section-desc"><p>Modify flextable`s formatting properties.</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
+        
+        <td>
+          <p><code><a href="set_flextable_defaults.html">set_flextable_defaults()</a></code> <code><a href="set_flextable_defaults.html">init_flextable_defaults()</a></code> </p>
+        </td>
+        <td><p>Modify flextable defaults formatting properties</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_flextable_defaults.html">get_flextable_defaults()</a></code> </p>
+        </td>
+        <td><p>Get flextable defaults formatting properties</p></td>
+      </tr><tr>
         
         <td>
           <p><code><a href="style.html">style()</a></code> </p>
@@ -330,6 +387,18 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="line_spacing.html">line_spacing()</a></code> </p>
+        </td>
+        <td><p>Set text alignment</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="highlight.html">highlight()</a></code> </p>
+        </td>
+        <td><p>Text Highlight Color</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="padding.html">padding()</a></code> </p>
         </td>
         <td><p>Set paragraph paddings</p></td>
@@ -359,10 +428,15 @@
           <p class="section-desc"><p>Borders management</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
-          <p><code><a href="borders.html">hline()</a></code> </p>
+          <p><code><a href="hline.html">hline()</a></code> </p>
         </td>
         <td><p>set horizontal borders</p></td>
       </tr><tr>
@@ -398,12 +472,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="border.html">border()</a></code> </p>
-        </td>
-        <td><p>Set cell borders</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="border_inner.html">border_inner()</a></code> </p>
         </td>
         <td><p>set vertical &amp; horizontal inner borders</p></td>
@@ -428,15 +496,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="border_remove.html">border_remove()</a></code> </p>
-        </td>
-        <td><p>remove borders</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="fix_border_issues.html">fix_border_issues()</a></code> </p>
         </td>
         <td><p>fix border issues when cell are merged</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="border_remove.html">border_remove()</a></code> </p>
+        </td>
+        <td><p>remove borders</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -445,12 +513,17 @@
           <p class="section-desc"><p>Apply theme functions.</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
           <p><code><a href="theme_alafoli.html">theme_alafoli()</a></code> </p>
         </td>
-        <td><p>Apply box theme</p></td>
+        <td><p>Apply alafoli theme</p></td>
       </tr><tr>
         
         <td>
@@ -480,7 +553,7 @@
         <td>
           <p><code><a href="theme_vader.html">theme_vader()</a></code> </p>
         </td>
-        <td><p>Apply Sith Lord Darth Vader</p></td>
+        <td><p>Apply Sith Lord Darth Vader theme</p></td>
       </tr><tr>
         
         <td>
@@ -501,12 +574,41 @@
           <p class="section-desc"><p>Define flextable`s content</p></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
           <p><code><a href="colformat_char.html">colformat_char()</a></code> </p>
         </td>
         <td><p>format character cells</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="colformat_date.html">colformat_date()</a></code> </p>
+        </td>
+        <td><p>format date cells</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="colformat_datetime.html">colformat_datetime()</a></code> </p>
+        </td>
+        <td><p>format datetime cells</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="colformat_double.html">colformat_double()</a></code> </p>
+        </td>
+        <td><p>format numeric cells</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="colformat_image.html">colformat_image()</a></code> </p>
+        </td>
+        <td><p>format cells as images</p></td>
       </tr><tr>
         
         <td>
@@ -528,15 +630,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="compose.html">compose()</a></code> <code><a href="compose.html">mk_par()</a></code> </p>
-        </td>
-        <td><p>Define flextable displayed values</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="set_formatter.html">set_formatter()</a></code> <code><a href="set_formatter.html">set_formatter_type()</a></code> </p>
         </td>
         <td><p>set column formatter functions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="compose.html">compose()</a></code> <code><a href="compose.html">mk_par()</a></code> </p>
+        </td>
+        <td><p>Define flextable displayed values</p></td>
       </tr><tr>
         
         <td>
@@ -552,33 +654,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="as_image.html">as_image()</a></code> </p>
-        </td>
-        <td><p>image chunk wrapper</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="minibar.html">minibar()</a></code> </p>
-        </td>
-        <td><p>mini barplots chunk wrapper</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="linerange.html">linerange()</a></code> </p>
-        </td>
-        <td><p>mini linerange chunk wrapper</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="as_b.html">as_b()</a></code> </p>
         </td>
         <td><p>bold chunk</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="as_bracket.html">as_bracket()</a></code> </p>
-        </td>
-        <td><p>chunk with values in brackets</p></td>
       </tr><tr>
         
         <td>
@@ -600,15 +678,87 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="as_highlight.html">as_highlight()</a></code> </p>
+        </td>
+        <td><p>highlight chunk</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="colorize.html">colorize()</a></code> </p>
+        </td>
+        <td><p>colorize chunk</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fp_border_default.html">fp_border_default()</a></code> </p>
+        </td>
+        <td><p>Border formatting properties</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="fp_text_default.html">fp_text_default()</a></code> </p>
+        </td>
+        <td><p>Text formatting properties</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_chunk.html">plot_chunk()</a></code> </p>
+        </td>
+        <td><p>mini plots chunk wrapper</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="gg_chunk.html">gg_chunk()</a></code> </p>
+        </td>
+        <td><p>gg plots chunk wrapper</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_image.html">as_image()</a></code> </p>
+        </td>
+        <td><p>image chunk wrapper</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="minibar.html">minibar()</a></code> </p>
+        </td>
+        <td><p>mini barplots chunk wrapper</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="linerange.html">linerange()</a></code> </p>
+        </td>
+        <td><p>mini linerange chunk wrapper</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="lollipop.html">lollipop()</a></code> </p>
+        </td>
+        <td><p>mini lollipop chart chunk wrapper</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_bracket.html">as_bracket()</a></code> </p>
+        </td>
+        <td><p>chunk with values in brackets</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="hyperlink_text.html">hyperlink_text()</a></code> </p>
         </td>
         <td><p>chunk of text with hyperlink wrapper</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="as_equation.html">as_equation()</a></code> </p>
+        </td>
+        <td><p>equation chunk</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="set_caption.html">set_caption()</a></code> </p>
         </td>
-        <td><p>set caption</p></td>
+        <td><p>Set Caption</p></td>
       </tr><tr>
         
         <td>
@@ -629,6 +779,11 @@
           <p class="section-desc"></p>
         </th>
       </tr>
+      
+      
+    </tbody><tbody>
+      
+      
       <tr>
         
         <td>
@@ -670,53 +825,137 @@
         <td>
           <p><code><a href="save_as_html.html">save_as_html()</a></code> </p>
         </td>
-        <td><p>save a flextable in an HTML file</p></td>
+        <td><p>Save a Flextable in an HTML File</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="format.flextable.html">format(<i>&lt;flextable&gt;</i>)</a></code> </p>
+          <p><code><a href="save_as_docx.html">save_as_docx()</a></code> </p>
         </td>
-        <td><p>Encode flextable in a document format.</p></td>
+        <td><p>save flextable objects in an Word file</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="save_as_pptx.html">save_as_pptx()</a></code> </p>
+        </td>
+        <td><p>save flextable objects in an PowerPoint file</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="htmltools_value.html">htmltools_value()</a></code> </p>
         </td>
-        <td><p>flextable as a div object</p></td>
+        <td><p>flextable as an HTML object</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="as_raster.html">as_raster()</a></code> </p>
         </td>
         <td><p>get a flextable as a raster</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="flextable_to_rmd.html">flextable_to_rmd()</a></code> </p>
+        </td>
+        <td><p>flextable raw code</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="df_printer.html">df_printer()</a></code> </p>
+        </td>
+        <td><p>Summarize a data.frame as a flextable</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="use_df_printer.html">use_df_printer()</a></code> </p>
+        </td>
+        <td><p>Summarize a data.frame as a flextable</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-as-flextable" class="hasAnchor"><a href="#section-as-flextable" class="anchor"></a>as_flextable</h2>
+          <p class="section-desc"><p>get flextable from objects and utilities</p></p>
+        </th>
+      </tr>
+      
+      
+    </tbody><tbody>
+      
+      
+      <tr>
+        
+        <td>
+          <p><code><a href="as_flextable.html">as_flextable()</a></code> </p>
+        </td>
+        <td><p>method to convert object to flextable</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_flextable.gam.html">as_flextable(<i>&lt;gam&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>tabular summary for gam object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_flextable.glm.html">as_flextable(<i>&lt;glm&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>tabular summary for glm object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_flextable.grouped_data.html">as_flextable(<i>&lt;grouped_data&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>tabular summary for grouped_data object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_flextable.htest.html">as_flextable(<i>&lt;htest&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>tabular summary for htest object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_flextable.lm.html">as_flextable(<i>&lt;lm&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>tabular summary for lm object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as_flextable.xtable.html">as_flextable(<i>&lt;xtable&gt;</i>)</a></code> <code><a href="as_flextable.xtable.html">xtable_to_flextable()</a></code> </p>
+        </td>
+        <td><p>get a flextable from a xtable object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="continuous_summary.html">continuous_summary()</a></code> </p>
+        </td>
+        <td><p>continuous columns summary</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="proc_freq.html">proc_freq()</a></code> </p>
+        </td>
+        <td><p>frequency table as flextable</p></td>
       </tr>
     </tbody>
     </table>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-create-flextable">Create flextable</a></li>
-      <li><a href="#section-headers-and-footers">Headers and footers</a></li>
-      <li><a href="#section-manage-flextable-layout">Manage flextable layout</a></li>
-      <li><a href="#section-format-flextable">Format flextable</a></li>
-      <li><a href="#section-borders">borders</a></li>
-      <li><a href="#section-flextable-themes">Flextable themes</a></li>
-      <li><a href="#section-content">Content</a></li>
-      <li><a href="#section-output-functions">Output functions</a></li>
-    </ul>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <link href="../ardata.css" rel="stylesheet">
 <div class="author">
-  <p>Version&nbsp;0.5.5 - Developed by David Gohel - proudly brought to you by <a href="http://www.ardata.fr"><img alt="ardata" src='../ardata-logo.svg' style="vertical-align:middle;height:24px;"/></a>
+  <p>Version&nbsp;0.6.10 - Developed by David Gohel - proudly brought to you by <a href="http://www.ardata.fr"><img alt="ardata" src='../ardata-logo.svg' style="vertical-align:middle;height:24px;"/></a>
   </p>
 </div>
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
 <script>
@@ -728,11 +967,14 @@
   ga('create', 'UA-48354045-1', 'auto');
   ga('send', 'pageview');
 </script>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
